@@ -1,0 +1,770 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="拾光">
+  <meta name="keywords" content="宅男,热血">
+  
+    <meta name="description" content="Java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Java基础】变量类型">
+<meta property="og:url" content="http://example.com/2023/03/01/%E3%80%90Java%E5%9F%BA%E7%A1%80%E3%80%91%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:site_name" content="荒岛">
+<meta property="og:description" content="Java基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-01T14:12:07.000Z">
+<meta property="article:modified_time" content="2023-08-01T08:07:05.000Z">
+<meta property="article:author" content="拾光">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>【Java基础】变量类型 - 荒岛</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【Java基础】变量类型"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-01 22:12" pubdate>
+          2023年3月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">【Java基础】变量类型</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="【Java基础】🐳变量类型">【Java基础】🐳变量类型</h1>
+<p>在 <code>Java</code> 语言中，所有的变量在使用前必须声明。声明变量的基本格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Java">type identifier [ = value][, identifier [= value] ...] ;<br></code></pre></td></tr></table></figure>
+<p>格式说明：<code>type</code> 为 Java 数据类型。<code>identifier</code> 是变量名。<strong>可以使用逗号隔开来声明多个同类型变量</strong>。</p>
+<p>以下列出了一些变量的声明实例。注意有些包含了初始化过程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">int</span> a, b, c;         <span class="hljs-comment">// 声明三个int型整数：a、b、c。</span><br><span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>, e, f = <span class="hljs-number">5</span>; <span class="hljs-comment">// 声明三个整数并赋予初值。</span><br><span class="hljs-type">byte</span> <span class="hljs-variable">z</span> <span class="hljs-operator">=</span> <span class="hljs-number">22</span>;         <span class="hljs-comment">// 声明并初始化z。</span><br><span class="hljs-type">double</span> <span class="hljs-variable">pi</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span>; <span class="hljs-comment">// 声明了pi。</span><br><span class="hljs-type">char</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;x&#x27;</span>;        <span class="hljs-comment">// 变量x的值是字符&#x27;x&#x27;。</span><br></code></pre></td></tr></table></figure>
+<p><code>Java</code> 语言支持的变量类型有：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>局部变量</mark>：类的方法中的变量。</p>
+</li>
+<li class="lvl-2">
+<p><mark>实例变量</mark>：独立于方法之外的变量，不过没有 <code>static</code> 修饰。</p>
+</li>
+<li class="lvl-2">
+<p><mark>类变量</mark>：独立于方法之外的变量，用 <code>static</code> 修饰。</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Variable</span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> allClicks=<span class="hljs-number">0</span>;    <span class="hljs-comment">// 类变量</span><br><br>    String str=<span class="hljs-string">&quot;hello world&quot;</span>;  <span class="hljs-comment">// 实例变量</span><br> <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span><span class="hljs-number">0</span>;  <span class="hljs-comment">// 局部变量</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="🧊1、Java局部变量">🧊1、Java局部变量</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>局部变量声明在方法、构造方法或者语句块中；</p>
+</li>
+<li class="lvl-2">
+<p>局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；</p>
+</li>
+<li class="lvl-2">
+<p>访问修饰符不能用于局部变量；</p>
+</li>
+<li class="lvl-2">
+<p>局部变量只在声明它的方法、构造方法或者语句块中可见；</p>
+</li>
+<li class="lvl-2">
+<p>局部变量是在栈上分配的。</p>
+</li>
+<li class="lvl-2">
+<p>局部变量没有默认值，所以局部变量被声明后，必须经过初始化，才可以使用。</p>
+</li>
+</ul>
+<blockquote>
+<p>实例1：</p>
+</blockquote>
+<p>在以下实例中 age 是一个局部变量。定义在 pupAge() 方法中，它的作用域就限制在这个方法中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123; <br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">pupAge</span><span class="hljs-params">()</span>&#123;<br>      <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>      age = age + <span class="hljs-number">7</span>;<br>      System.out.println(<span class="hljs-string">&quot;Puppy age is : &quot;</span> + age);<br>   &#125;<br>   <br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>&#123;<br>      <span class="hljs-type">Test</span> <span class="hljs-variable">test</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Test</span>();<br>      test.pupAge();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Java">Puppy age is: <span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>实例2：</p>
+</blockquote>
+<p>在下面的例子中 age 变量没有初始化，所以在编译时出错。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123; <br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">pupAge</span><span class="hljs-params">()</span>&#123;<br>      <span class="hljs-type">int</span> age;<br>      age = age + <span class="hljs-number">7</span>;<br>      System.out.println(<span class="hljs-string">&quot;Puppy age is : &quot;</span> + age);<br>   &#125;<br>   <br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>&#123;<br>      <span class="hljs-type">Test</span> <span class="hljs-variable">test</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Test</span>();<br>      test.pupAge();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Java">Test.java:<span class="hljs-number">4</span>:variable number might not have been <span class="hljs-type">initialized</span><br><span class="hljs-variable">age</span> <span class="hljs-operator">=</span> age + <span class="hljs-number">7</span>;<br>         ^<br><span class="hljs-number">1</span> error<br></code></pre></td></tr></table></figure>
+<h2 id="🧊2、实例变量">🧊2、实例变量</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>实例<mark>变量声明在一个类中，但在方法、构造方法和语句块之外</mark>；</p>
+</li>
+<li class="lvl-2">
+<p>当一个对象被实例化之后，每个实例变量的值就跟着确定；</p>
+</li>
+<li class="lvl-2">
+<p>实例变量在对象创建的时候创建，在对象被销毁的时候销毁；</p>
+</li>
+<li class="lvl-2">
+<p>实例变量的值应该至少被一个方法、构造方法或者语句块引用，使得外部能够通过这些方式获取实例变量信息；</p>
+</li>
+<li class="lvl-2">
+<p>实例变量可以声明在使用前或者使用后；</p>
+</li>
+<li class="lvl-2">
+<p><strong>访问修饰符可以修饰实例变量</strong>；</p>
+</li>
+<li class="lvl-2">
+<p><strong>实例变量对于类中的方法、构造方法或者语句块是可见的</strong>。<mark>一般情况下应该把实例变量设为私有</mark>。通过使用访问修饰符可以使实例变量对子类可见；</p>
+</li>
+<li class="lvl-2">
+<p>实例变量<strong>具有默认值</strong>。数值型变量的默认值是<code>0</code>，布尔型变量的默认值是 <code>false</code>，引用类型变量的默认值是 <code>null</code>。变量的值可以在声明时指定，也可以在构造方法中指定；</p>
+</li>
+<li class="lvl-2">
+<p><strong>实例变量可以直接通过变量名访问。但在静态方法以及其他类中，就应该使用完全限定名</strong>：ObejectReference.VariableName。</p>
+</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">import</span> java.io.*;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span>&#123;<br>   <span class="hljs-comment">// 这个成员变量对子类可见</span><br>   <span class="hljs-keyword">public</span> String name;<br>   <span class="hljs-comment">// 私有变量，仅在该类可见</span><br>   <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> salary;<br>   <span class="hljs-comment">//在构造器中对name赋值</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-title function_">Employee</span> <span class="hljs-params">(String empName)</span>&#123;<br>      name = empName;<br>   &#125;<br>   <span class="hljs-comment">//设定salary的值</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setSalary</span><span class="hljs-params">(<span class="hljs-type">double</span> empSal)</span>&#123;<br>      salary = empSal;<br>   &#125;  <br>   <span class="hljs-comment">// 打印信息</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printEmp</span><span class="hljs-params">()</span>&#123;<br>      System.out.println(<span class="hljs-string">&quot;name  : &quot;</span> + name );<br>      System.out.println(<span class="hljs-string">&quot;salary :&quot;</span> + salary);<br>   &#125;<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>&#123;<br>      <span class="hljs-type">Employee</span> <span class="hljs-variable">empOne</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Employee</span>(<span class="hljs-string">&quot;Ransika&quot;</span>);<br>      empOne.setSalary(<span class="hljs-number">1000</span>);<br>      empOne.printEmp();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs Java">name  : Ransika<br>salary :<span class="hljs-number">1000.0</span><br></code></pre></td></tr></table></figure>
+<h2 id="🧊3、类变量（静态变量）">🧊3、类变量（静态变量）</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>类变量<mark>也称为静态变量</mark>，在类中以 <code>static</code> 关键字声明，但<mark>必须在方法、构造方法和语句块之外</mark>。</p>
+</li>
+<li class="lvl-2">
+<p>无论一个类创建了多少个对象，类只拥有类变量的一份拷贝。</p>
+</li>
+<li class="lvl-2">
+<p>静态变量<strong>除了被声明为常量外很少使用</strong>。常量是指声明为 public/private，final 和 static 类型的变量。常量初始化后不可改变。</p>
+</li>
+<li class="lvl-2">
+<p>静态变量<mark>储存在静态存储区</mark>。经常被声明为常量，很少单独使用 static 声明变量。</p>
+</li>
+<li class="lvl-2">
+<p>静态变量在程序开始时创建，在程序结束时销毁。</p>
+</li>
+<li class="lvl-2">
+<p>与实例变量具有相似的可见性。但<strong>为了对类的使用者可见，大多数静态变量声明为 public 类型</strong>。</p>
+</li>
+<li class="lvl-2">
+<p>默认值和实例变量相似。数值型变量默认值是0，布尔型默认值是 false，引用类型默认值是 null。变量的值可以在声明的时候指定，也可以在构造方法中指定。此外，静态变量还可以在静态语句块中初始化。</p>
+</li>
+<li class="lvl-2">
+<p>静态变量可以通过：ClassName.VariableName 的方式访问。</p>
+</li>
+<li class="lvl-2">
+<p>类变量被声明为 <code>public static final</code> 类型时，<mark>类变量名称必须使用大写字母</mark>。如果静态变量不是 public 和 final 类型，其命名方式与实例变量以及局部变量的命名方式一致。</p>
+</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">import</span> java.io.*;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span>&#123;<br>   <span class="hljs-comment">//salary是静态的私有变量</span><br>   <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">double</span> salary;<br>   <span class="hljs-comment">// DEPARTMENT是一个常量</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">DEPARTMENT</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Development &quot;</span>;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>&#123;<br>      salary = <span class="hljs-number">1000</span>;<br>      System.out.println(DEPARTMENT+<span class="hljs-string">&quot;average salary:&quot;</span>+salary);<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Java">Development average salary:<span class="hljs-number">1000</span><br></code></pre></td></tr></table></figure>
+<p>注意：如果其他类想要访问该变量，可以这样访问：<code>Employee.DEPARTMENT</code>。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【Java基础】变量类型</div>
+      <div>http://example.com/2023/03/01/【Java基础】变量类型/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>拾光</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年3月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/01/%E3%80%90Java%E5%9F%BA%E7%A1%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="【Java基础】基本数据类型">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【Java基础】基本数据类型</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/28/Hexo%E6%90%AD%E5%BB%BAButterfly%E4%B8%BB%E9%A2%98%E5%B9%B6%E5%BF%AB%E9%80%9F%E7%BE%8E%E5%8C%96/" title="【Hexo】Hexo搭建Butterfly主题并快速美化">
+                        <span class="hidden-mobile">【Hexo】Hexo搭建Butterfly主题并快速美化</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

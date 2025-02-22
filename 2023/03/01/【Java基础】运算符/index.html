@@ -1,0 +1,1055 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="拾光">
+  <meta name="keywords" content="宅男,热血">
+  
+    <meta name="description" content="Java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Java基础】运算符">
+<meta property="og:url" content="http://example.com/2023/03/01/%E3%80%90Java%E5%9F%BA%E7%A1%80%E3%80%91%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:site_name" content="荒岛">
+<meta property="og:description" content="Java基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-01T14:14:55.000Z">
+<meta property="article:modified_time" content="2023-08-01T08:07:05.000Z">
+<meta property="article:author" content="拾光">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>【Java基础】运算符 - 荒岛</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【Java基础】运算符"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-01 22:14" pubdate>
+          2023年3月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          26 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">【Java基础】运算符</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="【Java基础】🐳运算符">【Java基础】🐳运算符</h1>
+<p>计算机的最基本用途之一就是执行数学运算，作为一门计算机语言，<code>Java</code>也提供了一套丰富的运算符来操纵变量。我们可以把运算符分成以下几组：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>算术运算符</p>
+</li>
+<li class="lvl-2">
+<p>关系运算符</p>
+</li>
+<li class="lvl-2">
+<p>位运算符</p>
+</li>
+<li class="lvl-2">
+<p>逻辑运算符</p>
+</li>
+<li class="lvl-2">
+<p>赋值运算符</p>
+</li>
+<li class="lvl-2">
+<p>其他运算符</p>
+</li>
+</ul>
+<h2 id="🧊1、算术运算符">🧊1、算术运算符</h2>
+<p>算术运算符用在数学表达式中，它们的作用和在数学中的作用一样。下表列出了所有的算术运算符。</p>
+<p>表格中的实例假设整数变量A的值为10，变量B的值为20：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">操作符</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">加法 - 相加运算符两侧的值</td>
+<td style="text-align:left">A + B等于30</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">减法 - 左操作数减去右操作数</td>
+<td style="text-align:left">A – B等于-10</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">乘法 - 相乘操作符两侧的值</td>
+<td style="text-align:left">A * B等于200</td>
+</tr>
+<tr>
+<td style="text-align:left">/</td>
+<td style="text-align:left">除法 - 左操作数除以右操作数</td>
+<td style="text-align:left">B / A等于2</td>
+</tr>
+<tr>
+<td style="text-align:left">％</td>
+<td style="text-align:left">取模 - 左操作数除以右操作数的余数</td>
+<td style="text-align:left">B%A等于0</td>
+</tr>
+<tr>
+<td style="text-align:left">++</td>
+<td style="text-align:left">自增 - 操作数的值增加1</td>
+<td style="text-align:left">B++ 或 ++B 等于 21</td>
+</tr>
+<tr>
+<td style="text-align:left">–</td>
+<td style="text-align:left">自减 - 操作数的值减少1</td>
+<td style="text-align:left">B-- 或 --B 等于 19</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>虽然都是自增（他们的运算结果都是等于B+1），但B<ins>和</ins>B还是有所区别，<strong>++B是左值，直接原地操作（可以理解为直接在变量B上+1）</strong>，<strong>B++是右值，在编译器中运算的时候会先构建一个临时变量，用临时变量运算+1后再赋值给B。</strong></p>
+<p>所以，在下面实例代码中，打印d<ins>的时候发现结果并没有+1（这个时候打印的是d这个变量，运算的是d的临时变量），但是后一条打印的语句显示的结果又是+1后的结果（临时变量的值赋给变量d了）。而打印</ins>d的结果是直接+1的。</p>
+</blockquote>
+<p><strong>实例:</strong></p>
+<p>下面的简单示例程序演示了算术运算符。复制并粘贴下面的Java程序并保存为<code>Test.java</code>文件，然后编译并运行这个程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">25</span>;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-number">25</span>;<br>     System.out.println(<span class="hljs-string">&quot;a + b = &quot;</span> + (a + b) );<br>     System.out.println(<span class="hljs-string">&quot;a - b = &quot;</span> + (a - b) );<br>     System.out.println(<span class="hljs-string">&quot;a * b = &quot;</span> + (a * b) );<br>     System.out.println(<span class="hljs-string">&quot;b / a = &quot;</span> + (b / a) );<br>     System.out.println(<span class="hljs-string">&quot;b % a = &quot;</span> + (b % a) );<br>     System.out.println(<span class="hljs-string">&quot;c % a = &quot;</span> + (c % a) );<br>     System.out.println(<span class="hljs-string">&quot;a++   = &quot;</span> +  (a++) );<br>     System.out.println(<span class="hljs-string">&quot;a--   = &quot;</span> +  (a--) );<br>     <span class="hljs-comment">// 查看  d++ 与 ++d 的不同</span><br>     System.out.println(<span class="hljs-string">&quot;d++   = &quot;</span> +  (d++) );<br>     System.out.println(<span class="hljs-string">&quot;d     = &quot;</span> +  d);<br>     System.out.println(<span class="hljs-string">&quot;++d   = &quot;</span> +  (++d) );<br>  &#125;<br>&#125; <br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">a + b = <span class="hljs-number">30</span><br>a - b = -<span class="hljs-number">10</span><br>a * b = <span class="hljs-number">200</span><br>b / a = <span class="hljs-number">2</span><br>b % a = <span class="hljs-number">0</span><br>c % a = <span class="hljs-number">5</span><br>a++   = <span class="hljs-number">10</span><br>a--   = <span class="hljs-number">11</span><br>d++   = <span class="hljs-number">25</span><br>d     =<span class="hljs-number">26</span><br>++d   = <span class="hljs-number">27</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧊2、关系运算符">🧊2、关系运算符</h2>
+<p>下表为<code>Java</code>支持的关系运算符</p>
+<p>表格中的实例整数变量A的值为10，变量B的值为20：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">==</td>
+<td style="text-align:left">检查如果两个操作数的值是否相等，如果相等则条件为真。</td>
+<td style="text-align:left">（A == B）为假(非真)。</td>
+</tr>
+<tr>
+<td style="text-align:left">!=</td>
+<td style="text-align:left">检查如果两个操作数的值是否相等，如果值不相等则条件为真。</td>
+<td style="text-align:left">(A != B) 为真。</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">检查左操作数的值是否大于右操作数的值，如果是那么条件为真。</td>
+<td style="text-align:left">（A&gt; B）非真。</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">检查左操作数的值是否小于右操作数的值，如果是那么条件为真。</td>
+<td style="text-align:left">（A &lt;B）为真。</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">检查左操作数的值是否大于或等于右操作数的值，如果是那么条件为真。</td>
+<td style="text-align:left">（A&gt; = B）为假。</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;=</td>
+<td style="text-align:left">检查左操作数的值是否小于或等于右操作数的值，如果是那么条件为真。</td>
+<td style="text-align:left">（A &lt;= B）为真。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实例：</strong></p>
+<p>下面的简单示例程序演示了关系运算符。复制并粘贴下面的<code>Java</code>程序并保存为<code>Test.java</code>文件，然后编译并运行这个程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;<br>     System.out.println(<span class="hljs-string">&quot;a == b = &quot;</span> + (a == b) );<br>     System.out.println(<span class="hljs-string">&quot;a != b = &quot;</span> + (a != b) );<br>     System.out.println(<span class="hljs-string">&quot;a &gt; b = &quot;</span> + (a &gt; b) );<br>     System.out.println(<span class="hljs-string">&quot;a &lt; b = &quot;</span> + (a &lt; b) );<br>     System.out.println(<span class="hljs-string">&quot;b &gt;= a = &quot;</span> + (b &gt;= a) );<br>     System.out.println(<span class="hljs-string">&quot;b &lt;= a = &quot;</span> + (b &lt;= a) );<br>   &#125; <br>&#125;  <br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">a == b = <span class="hljs-literal">false</span><br>a != b = <span class="hljs-literal">true</span><br>a &gt; b = <span class="hljs-literal">false</span><br>a &lt; b = <span class="hljs-literal">true</span> b &gt;= a = <span class="hljs-literal">true</span><br>b &lt;= a = <span class="hljs-literal">false</span> <br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧊3、位运算符">🧊3、位运算符</h2>
+<p><code>Java</code>定义了位运算符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)，和字节型(byte)等类型。</p>
+<p>位运算符作用在所有的位上，并且按位运算。假设a = 60，和b = 13;它们的二进制格式表示将如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JAVA">A = <span class="hljs-number">0011</span> <span class="hljs-number">1100</span><br>B = <span class="hljs-number">0000</span> <span class="hljs-number">1101</span><br>-----------------<br>A&amp;B = <span class="hljs-number">0000</span> <span class="hljs-number">1100</span><br>A | B = <span class="hljs-number">0011</span> <span class="hljs-number">1101</span><br>A ^ B = <span class="hljs-number">0011</span> <span class="hljs-number">0001</span><br>~A= <span class="hljs-number">1100</span> <span class="hljs-number">0011</span><br></code></pre></td></tr></table></figure>
+<p>下表列出了位运算符的基本运算,假设整数变量A的值为60和变量B的值为13：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">操作符</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">＆</td>
+<td style="text-align:left">按位与操作符，当且仅当两个操作数的某一位都非0时候结果的该位才为1。</td>
+<td style="text-align:left">（A＆B），得到12，即0000 1100</td>
+</tr>
+<tr>
+<td style="text-align:left">|</td>
+<td style="text-align:left">按位或操作符，只要两个操作数的某一位有一个非0时候结果的该位就为1。</td>
+<td style="text-align:left">（A | B）得到61，即 0011 1101</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">按位异或操作符，两个操作数的某一位不相同时候结果的该位就为1。</td>
+<td style="text-align:left">（A ^ B）得到49，即 0011 0001</td>
+</tr>
+<tr>
+<td style="text-align:left">〜</td>
+<td style="text-align:left">按位补运算符翻转操作数的每一位。</td>
+<td style="text-align:left">（〜A）得到-61，即1100 0011</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;&lt;</td>
+<td style="text-align:left">按位左移运算符。左操作数按位左移右操作数指定的位数。</td>
+<td style="text-align:left">A &lt;&lt; 2得到240，即 1111 0000</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;&gt;</td>
+<td style="text-align:left">按位右移运算符。左操作数按位右移右操作数指定的位数。</td>
+<td style="text-align:left">A &gt;&gt; 2得到15即 1111</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;&gt;&gt;</td>
+<td style="text-align:left">按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。</td>
+<td style="text-align:left">A&gt;&gt;&gt;2得到15即0000 1111</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实例:</strong></p>
+<p>下面的简单示例程序演示了位运算符。复制并粘贴下面的Java程序并保存为Test.java文件，然后编译并运行这个程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">60</span>; <span class="hljs-comment">/* 60 = 0011 1100 */</span> <br>     <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">13</span>; <span class="hljs-comment">/* 13 = 0000 1101 */</span><br>     <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>     c = a &amp; b;       <span class="hljs-comment">/* 12 = 0000 1100 */</span><br>     System.out.println(<span class="hljs-string">&quot;a &amp; b = &quot;</span> + c );<br><br>     c = a | b;       <span class="hljs-comment">/* 61 = 0011 1101 */</span><br>     System.out.println(<span class="hljs-string">&quot;a | b = &quot;</span> + c );<br><br>     c = a ^ b;       <span class="hljs-comment">/* 49 = 0011 0001 */</span><br>     System.out.println(<span class="hljs-string">&quot;a ^ b = &quot;</span> + c );<br><br>     c = ~a;          <span class="hljs-comment">/*-61 = 1100 0011 */</span><br>     System.out.println(<span class="hljs-string">&quot;~a = &quot;</span> + c );<br><br>     c = a &lt;&lt; <span class="hljs-number">2</span>;     <span class="hljs-comment">/* 240 = 1111 0000 */</span><br>     System.out.println(<span class="hljs-string">&quot;a &lt;&lt; 2 = &quot;</span> + c );<br>     c = a &gt;&gt; <span class="hljs-number">2</span>;     <span class="hljs-comment">/* 215 = 1111 */</span><br>     System.out.println(<span class="hljs-string">&quot;a &gt;&gt; 2  = &quot;</span> + c );<br>  <br>     c = a &gt;&gt;&gt; <span class="hljs-number">2</span>;     <span class="hljs-comment">/* 215 = 0000 1111 */</span><br>     System.out.println(<span class="hljs-string">&quot;a &gt;&gt;&gt; 2 = &quot;</span> + c );<br>  &#125;<br>&#125; <br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java">a &amp; b = <span class="hljs-number">12</span><br>a | b = <span class="hljs-number">61</span><br>a ^ b = <span class="hljs-number">49</span><br>~a = -<span class="hljs-number">61</span><br>a &lt;&lt; <span class="hljs-number">2</span> = <span class="hljs-number">240</span> <br>a &gt;&gt; <span class="hljs-number">2</span> = <span class="hljs-number">15</span><br>a &gt;&gt;&gt; <span class="hljs-number">2</span> = <span class="hljs-number">15</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧊4、逻辑运算符">🧊4、逻辑运算符</h2>
+<p>下表列出了逻辑运算符的基本运算，假设布尔变量A为真，变量B为假</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">操作符</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&amp;&amp;</td>
+<td style="text-align:left">称为逻辑与运算符。当且仅当两个操作数都为真，条件才为真。</td>
+<td style="text-align:left">（A &amp;&amp; B）为假。</td>
+</tr>
+<tr>
+<td style="text-align:left">| |</td>
+<td style="text-align:left">称为逻辑或操作符。如果任何两个操作数任何一个为真，条件为真。</td>
+<td style="text-align:left">（A | | B）为真。</td>
+</tr>
+<tr>
+<td style="text-align:left">！</td>
+<td style="text-align:left">称为逻辑非运算符。用来反转操作数的逻辑状态。如果条件为true，则逻辑非运算符将得到false。</td>
+<td style="text-align:left">！（A &amp;&amp; B）为真。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实例：</strong></p>
+<p>下面的简单示例程序演示了逻辑运算符。复制并粘贴下面的Java程序并保存为<code>Test.java</code>文件，然后编译并运行这个程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>     <span class="hljs-type">boolean</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>     <span class="hljs-type">boolean</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>     System.out.println(<span class="hljs-string">&quot;a &amp;&amp; b = &quot;</span> + (a&amp;&amp;b));<br>     System.out.println(<span class="hljs-string">&quot;a || b = &quot;</span> + (a||b) );<br>     System.out.println(<span class="hljs-string">&quot;!(a &amp;&amp; b) = &quot;</span> + !(a &amp;&amp; b));<br>  &#125;<br>&#125; <br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">a &amp;&amp; b = <span class="hljs-literal">false</span><br>a || b = <span class="hljs-literal">true</span><br>!(a &amp;&amp; b) = <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧊5、赋值运算符">🧊5、赋值运算符</h2>
+<p>下面是Java语言支持的赋值运算符：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">操作符</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left">简单的赋值运算符，将右操作数的值赋给左侧操作数</td>
+<td style="text-align:left">C = A + B将把A + B得到的值赋给C</td>
+</tr>
+<tr>
+<td style="text-align:left">+ =</td>
+<td style="text-align:left">加和赋值操作符，它把左操作数和右操作数相加赋值给左操作数</td>
+<td style="text-align:left">C + = A等价于C = C + A</td>
+</tr>
+<tr>
+<td style="text-align:left">- =</td>
+<td style="text-align:left">减和赋值操作符，它把左操作数和右操作数相减赋值给左操作数</td>
+<td style="text-align:left">C - = A等价于C = C -  A</td>
+</tr>
+<tr>
+<td style="text-align:left">* =</td>
+<td style="text-align:left">乘和赋值操作符，它把左操作数和右操作数相乘赋值给左操作数</td>
+<td style="text-align:left">C * = A等价于C = C * A</td>
+</tr>
+<tr>
+<td style="text-align:left">/ =</td>
+<td style="text-align:left">除和赋值操作符，它把左操作数和右操作数相除赋值给左操作数</td>
+<td style="text-align:left">C / = A等价于C = C / A</td>
+</tr>
+<tr>
+<td style="text-align:left">（％）=</td>
+<td style="text-align:left">取模和赋值操作符，它把左操作数和右操作数取模后赋值给左操作数</td>
+<td style="text-align:left">C％= A等价于C = C％A</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;&lt; =</td>
+<td style="text-align:left">左移位赋值运算符</td>
+<td style="text-align:left">C &lt;&lt; = 2等价于C = C &lt;&lt; 2</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;&gt; =</td>
+<td style="text-align:left">右移位赋值运算符</td>
+<td style="text-align:left">C &gt;&gt; = 2等价于C = C &gt;&gt; 2</td>
+</tr>
+<tr>
+<td style="text-align:left">＆=</td>
+<td style="text-align:left">按位与赋值运算符</td>
+<td style="text-align:left">C＆= 2等价于C = C＆2</td>
+</tr>
+<tr>
+<td style="text-align:left">^ =</td>
+<td style="text-align:left">按位异或赋值操作符</td>
+<td style="text-align:left">C ^ = 2等价于C = C ^ 2</td>
+</tr>
+<tr>
+<td style="text-align:left">| =</td>
+<td style="text-align:left">按位或赋值操作符</td>
+<td style="text-align:left">C | = 2等价于C = C | 2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实例：</strong></p>
+<p>下面的简单示例程序演示了赋值运算符。复制并粘贴下面的Java程序并保存为Test.java文件，然后编译并运行这个程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>     c = a + b;<br>     System.out.println(<span class="hljs-string">&quot;c = a + b = &quot;</span> + c );<br>     c += a ;<br>     System.out.println(<span class="hljs-string">&quot;c += a  = &quot;</span> + c );<br>     c -= a ;<br>     System.out.println(<span class="hljs-string">&quot;c -= a = &quot;</span> + c );<br>     c *= a ;<br>     System.out.println(<span class="hljs-string">&quot;c *= a = &quot;</span> + c );<br>     a = <span class="hljs-number">10</span>;<br>     c = <span class="hljs-number">15</span>;<br>     c /= a ;<br>     System.out.println(<span class="hljs-string">&quot;c /= a = &quot;</span> + c );<br>     a = <span class="hljs-number">10</span>;<br>     c = <span class="hljs-number">15</span>;<br>     c %= a ;<br>     System.out.println(<span class="hljs-string">&quot;c %= a  = &quot;</span> + c );<br>     c &lt;&lt;= <span class="hljs-number">2</span> ; <br>     System.out.println(<span class="hljs-string">&quot;c &lt;&lt;= 2 = &quot;</span> + c ); <br>     c &gt;&gt;= <span class="hljs-number">2</span> ;<br>     System.out.println(<span class="hljs-string">&quot;c &gt;&gt;= 2 = &quot;</span> + c );<br>     c &gt;&gt;= <span class="hljs-number">2</span> ;<br>     System.out.println(<span class="hljs-string">&quot;c &gt;&gt;= a = &quot;</span> + c );<br>     c &amp;= a ;<br>     System.out.println(<span class="hljs-string">&quot;c &amp;= a = &quot;</span> + c );<br>     c ^= a ;<br>     System.out.println(<span class="hljs-string">&quot;c ^= a = &quot;</span> + c );<br>     c |= a ;<br>     System.out.println(<span class="hljs-string">&quot;c |= a = &quot;</span> + c );<br>  &#125;<br>&#125; <br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">c = a + b = <span class="hljs-number">30</span><br>c += a  = <span class="hljs-number">40</span><br>c -= a = <span class="hljs-number">30</span><br>c *= a = <span class="hljs-number">300</span><br>c /= a = <span class="hljs-number">1</span><br>c %= a  = <span class="hljs-number">5</span><br>c &lt;&lt;= <span class="hljs-number">2</span> = <span class="hljs-number">20</span> c &gt;&gt;= <span class="hljs-number">2</span> = <span class="hljs-number">5</span><br>c &gt;&gt;= <span class="hljs-number">2</span> = <span class="hljs-number">1</span><br>c &amp;= a  = <span class="hljs-number">0</span><br>c ^= a   = <span class="hljs-number">10</span><br>c |= a   = <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧊6、条件运算符（-）">🧊6、条件运算符（?:）</h2>
+<p>条件运算符也被称为三元运算符。该运算符有3个操作数，并且需要判断布尔表达式的值。该运算符的主要是决定哪个值应该赋值给变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">variable</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> (expression) ? value <span class="hljs-keyword">if</span> <span class="hljs-literal">true</span> : value <span class="hljs-keyword">if</span> <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<p><strong>实例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>&#123;<br>      <span class="hljs-type">int</span> a , b;   <br>      a = <span class="hljs-number">10</span>;    <br>      b = (a == <span class="hljs-number">1</span>) ? <span class="hljs-number">20</span>: <span class="hljs-number">30</span>;    <br>      System.out.println( <span class="hljs-string">&quot;Value of b is : &quot;</span> +  b );<br>      b = (a == <span class="hljs-number">10</span>) ? <span class="hljs-number">20</span>: <span class="hljs-number">30</span>;    <br>      System.out.println( <span class="hljs-string">&quot;Value of b is : &quot;</span> + b );<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Value of b is : <span class="hljs-number">30</span><br>Value of b is : <span class="hljs-number">20</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧊7、instanceof-运算符">🧊7、instanceof 运算符</h2>
+<p>该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。</p>
+<p><code>instanceof</code>运算符使用格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">( Object reference variable ) <span class="hljs-keyword">instanceof</span>  (class/<span class="hljs-keyword">interface</span> <span class="hljs-title class_">type</span>)<br></code></pre></td></tr></table></figure>
+<p>如果运算符左侧变量所指的对象，是操作符右侧类或接口(class/interface)的一个对象，那么结果为真。</p>
+<p>下面是一个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;James&#x27;</span>;<br><span class="hljs-type">boolean</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> name <span class="hljs-keyword">instanceof</span> String; <span class="hljs-comment">// 由于name是String类型，所以返回真</span><br></code></pre></td></tr></table></figure>
+<p>如果被比较的对象兼容于右侧类型,该运算符仍然返回true。</p>
+<p>看下面的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Vehicle</span> &#123;&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Vehicle</span> &#123;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>&#123;<br>      <span class="hljs-type">Vehicle</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>();<br>      <span class="hljs-type">boolean</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span>  a <span class="hljs-keyword">instanceof</span> Car;<br>      System.out.println( result);<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧊8、Java运算符优先级">🧊8、Java运算符优先级</h2>
+<p>当多个运算符出现在一个表达式中，谁先谁后呢？这就涉及到运算符的优先级别的问题。在一个多运算符的表达式中，运算符优先级不同会导致最后得出的结果差别甚大。</p>
+<p>例如，（1+3）＋（3+2）*2，这个表达式如果按加号最优先计算，答案就是 18，如果按照乘号最优先，答案则是 14。</p>
+<p>再如，x = 7 + 3 * 2;这里x得到13，而不是20，因为乘法运算符比加法运算符有较高的优先级，所以先计算3 * 2得到6，然后再加7。</p>
+<p>下表中具有最高优先级的运算符在的表的最上面，最低优先级的在表的底部。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">操作符</th>
+<th style="text-align:left">关联性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">后缀</td>
+<td style="text-align:left">() [] . (点操作符)</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">一元</td>
+<td style="text-align:left">+ + - ！〜</td>
+<td style="text-align:left">从右到左</td>
+</tr>
+<tr>
+<td style="text-align:left">乘性</td>
+<td style="text-align:left">* /％</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">加性</td>
+<td style="text-align:left">+ -</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">移位</td>
+<td style="text-align:left">&gt;&gt; &gt;&gt;&gt;  &lt;&lt;</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">关系</td>
+<td style="text-align:left">&gt;&gt; = &lt;&lt; =</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">相等</td>
+<td style="text-align:left">== !=</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">按位与</td>
+<td style="text-align:left">＆</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">按位异或</td>
+<td style="text-align:left">^</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">按位或</td>
+<td style="text-align:left">|</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑与</td>
+<td style="text-align:left">&amp;&amp;</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑或</td>
+<td style="text-align:left">| |</td>
+<td style="text-align:left">左到右</td>
+</tr>
+<tr>
+<td style="text-align:left">条件</td>
+<td style="text-align:left">？：</td>
+<td style="text-align:left">从右到左</td>
+</tr>
+<tr>
+<td style="text-align:left">赋值</td>
+<td style="text-align:left">= + = - = * = / =％= &gt;&gt; = &lt;&lt; =＆= ^ = | =</td>
+<td style="text-align:left">从右到左</td>
+</tr>
+<tr>
+<td style="text-align:left">逗号</td>
+<td style="text-align:left">，</td>
+<td style="text-align:left">左到右</td>
+</tr>
+</tbody>
+</table>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【Java基础】运算符</div>
+      <div>http://example.com/2023/03/01/【Java基础】运算符/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>拾光</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年3月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/01/%E3%80%90Java%E5%9F%BA%E7%A1%80%E3%80%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/" title="【Java基础】对象和类">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【Java基础】对象和类</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/01/%E3%80%90Java%E5%9F%BA%E7%A1%80%E3%80%91%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="【Java基础】修饰符">
+                        <span class="hidden-mobile">【Java基础】修饰符</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
